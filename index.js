@@ -190,26 +190,20 @@ function game(user, computer){
 
   if(user === computer){
     return ("it's a tie")
-  }
-  if(user === "rock" && computer === "scissor"){
+  }else if(user === "rock" && computer === "scissor"){
     return ("you win!")
-  }
-  if(user === "rock" && computer === "paper"){
+  }else if(user === "rock" && computer === "paper"){
       return ("you lose!")
-  }
-
-  if(user === "paper" && computer === "rock"){
+  }else if(user === "paper" && computer === "rock"){
     return ("you win!")
-  }
-  if(user === "paper" && computer === "scissor"){
+  }else if(user === "paper" && computer === "scissor"){
     return ("you lose!")
-  }
-
-  if(user === "scissor" && computer === "paper"){
+  }else if(user === "scissor" && computer === "paper"){
     return ("you win!")
-  }
-  if(user === "scissor" && computer === "rock"){
+  }else if(user === "scissor" && computer === "rock"){
     return ("you lose!")
+  }else{
+    return 'You did not enter rock, paper or scissor did you?'
   }
 }
 
@@ -224,7 +218,7 @@ if(ran === 0){
   choice = "scissor"
 }
 
-console.log(game("SCISSOR",choice))
+game('paper', choice)
 
 
 
