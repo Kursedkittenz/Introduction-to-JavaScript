@@ -185,6 +185,9 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 */
 
 function game(user, computer){
+  user = user.toLowerCase()
+  computer = computer.toLowerCase()
+
   if(user === computer){
     return ("it's a tie")
   }
@@ -197,10 +200,10 @@ function game(user, computer){
 
   if(user === "paper" && computer === "rock"){
     return ("you win!")
-    }
+  }
   if(user === "paper" && computer === "scissor"){
     return ("you lose!")
-    }
+  }
 
   if(user === "scissor" && computer === "paper"){
     return ("you win!")
@@ -212,6 +215,7 @@ function game(user, computer){
 
 const ran = Math.floor(Math.random()*3)
 let choice = ''
+
 if(ran === 0){
   choice = "rock"
 } else if(ran === 1){
@@ -220,7 +224,9 @@ if(ran === 0){
   choice = "scissor"
 }
 
-console.log(game("scissor",choice))
+console.log(game("SCISSOR",choice))
+
+
 
 
 
