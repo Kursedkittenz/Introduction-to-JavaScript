@@ -20,7 +20,8 @@ Do the following:
    HINT: no function required
 */
 
-
+let votingAge = 18
+if(votingAge >= 18){'true'}
 
 /*
 Task 1b - Values (not auto tested)
@@ -34,7 +35,11 @@ Do the following:
    HINT: no function required
 */
 
-
+let first = 'hi'
+let second =  'hello'
+/*if(first !== second){
+  console.log(first)
+}*/
 
 
 
@@ -49,6 +54,9 @@ Do the following:
    HINT: look up the Number method
 */
 
+let text = '1999'
+text = parseInt(text)
+//console.log(text, typeof text)
 
 
 
@@ -61,11 +69,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a,b){
+  return (a*b)
 }
 
-
+multiply(2,3)
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -77,9 +85,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return (age*7)
 }
+
+dogYears(10)
 
 
 
@@ -89,7 +99,7 @@ function dogYears(/*add your code here*/){
 /*
 Use the hungryDog function and feeding requirements below to do the following:
 1. Invoke the hungryDog function below and pass it a weight value in pounds, followed by an age value in years
-2. 🌟 NOTE: if the dog is a puppy, the age will be a decimal (rounded to two places). For example: 3 months = .25 (3 divided by 12)
+2. note: if the dog is a puppy, the age will be a decimal. For example: three months = 3/12 or .25
 3. Do the proper calculations and return the number of pounds of raw food to feed the dog/puppy in a day
 
 REMEMBER: This program should handle correctly adult AND puppy ages and weights
@@ -129,10 +139,28 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(pounds,years){
+  if(years >= 1){
+    if(pounds <= 5){
+      return (pounds*.05)
+    }else if(pounds > 5 && pounds <= 10){
+      return (pounds*.04)
+    }else if(pounds > 10 && pounds <= 15){
+      return (pounds*.03)
+    }else if(pounds > 15){
+      return (pounds*.02)
+    }
+  }else if(years >= .2 && years <= .4){
+    return (pounds*.1)
+  }else if(years > .4 && years <= .7){
+      return (pounds*.05)
+  }else if(years > .7 && years < 1){
+      return (pounds*.04)
+  }
 }
 
+
+hungryDog(15,1)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -157,9 +185,47 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 */
 
 function game(user, computer){
-  /*add your code here*/
+  if(user === 'rock'){
+    if(computer === 'scissor'){
+      return ('you win!')
+    }else if(computer === 'paper'){
+      return ('you lose!')
+    }else if(computer === 'rock'){
+      return ("it's a tie")
+    }
+  }
+  if(user === 'paper'){
+    if(computer === 'rock'){
+      return ('you win!')
+    }else if(computer === 'scissor'){
+      return ('you lose!')
+    }else if(computer === 'paper'){
+      return ("it's a tie")
+    }
+  }
+  if(user === 'scissor'){
+    if(computer === 'paper'){
+      return ('you win!')
+    }else if(computer === 'rock'){
+      return ('you lose!')
+    }else if(choice === 'scissor'){
+      return ("it's a tie")
+    }
+  }
 }
 
+const ran = Math.floor(Math.random()*3)
+let choice = ''
+if(ran === 0){
+  choice = 'rock'
+} else if(ran === 1){
+  choice = 'paper'
+} else{
+  choice = 'scissor'
+}
+
+console.log(game('paper',choice))
+console.log(choice)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -173,11 +239,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  return (km*0.621371)
 }
 
-
+miles(2)
 
 //Task 5b - Feet to CM
 /*
@@ -187,11 +253,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return (cm/30.48)
 }
 
-
+feet(2)
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -207,8 +273,13 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+  return (`${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num-1} bottles of soda on the wall`)
+}
+
+let rounds = 2
+for(let i = rounds; rounds >=1; rounds--){
+  (annoyingSong(rounds))
 }
 
 
@@ -227,9 +298,21 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(grade){
+  if(grade >= 90 && grade <= 100){
+    return ('you got an A')
+  }else if(grade >= 80 && grade <= 89){
+    return ('you got a B')
+  }else if(grade >= 70 && grade <= 79){
+    return ('you got a C')
+  }else if(grade >= 60 && grade <= 69){
+    return ('you got a D')
+  }else{
+    return ('you got a F')
+  }
 }
+
+grade(100)
 
 
 
@@ -246,9 +329,12 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(text) {
+  let vowels = ['a','e','i','o','u']
+  return text.split('').filter(x => vowels.includes(x)).length
 }
+
+console.log(vowelCounter('hellou'))
 
 
 
