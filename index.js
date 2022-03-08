@@ -190,26 +190,23 @@ function game(user, computer){
       return ("you win!")
     }else if(computer === "paper"){
       return ("you lose!")
-    }else if(computer === "rock"){
-      return ("it's a tie")
     }
-  }else if(user === "paper"){
+  }
+  if(user === "paper"){
     if(computer === "rock"){
       return ("you win!")
     }else if(computer === "scissor"){
       return ("you lose!")
-    }else if(computer === "paper"){
-      return ("it's a tie")
     }
-  }else if(user === "scissor"){
+  }
+  if(user === "scissor"){
     if(computer === "paper"){
       return ("you win!")
     }else if(computer === "rock"){
       return ("you lose!")
-    }else if(choice === "scissor"){
-      return ("it's a tie")
     }
   }
+  return ("it's a tie")
 }
 
 const ran = Math.floor(Math.random()*3)
