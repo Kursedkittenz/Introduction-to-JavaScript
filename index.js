@@ -222,7 +222,7 @@ if(ran === 0){
   choice = 'scissor'
 }
 
-console.log(game('paper',choice))
+game('paper',choice)
 console.log(choice)
 
 
