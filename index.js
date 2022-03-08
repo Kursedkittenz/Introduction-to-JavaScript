@@ -190,17 +190,17 @@ function game(user, computer){
 
   if(user === computer){
     return ("it's a tie")
-  }else if(user === "rock" && computer === "scissor"){
+  }else if(user === "rock" && computer === "scissors"){
     return ("you win!")
   }else if(user === "rock" && computer === "paper"){
       return ("you lose!")
   }else if(user === "paper" && computer === "rock"){
     return ("you win!")
-  }else if(user === "paper" && computer === "scissor"){
+  }else if(user === "paper" && computer === "scissors"){
     return ("you lose!")
-  }else if(user === "scissor" && computer === "paper"){
+  }else if(user === "scissors" && computer === "paper"){
     return ("you win!")
-  }else if(user === "scissor" && computer === "rock"){
+  }else if(user === "scissors" && computer === "rock"){
     return ("you lose!")
   }else{
     return `${user} and ${computer}`
