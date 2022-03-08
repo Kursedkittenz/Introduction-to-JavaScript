@@ -203,7 +203,7 @@ function game(user, computer){
   }else if(user === "scissor" && computer === "rock"){
     return ("you lose!")
   }else{
-    return 'You did not enter rock, paper or scissor did you?'
+    return `${user} and ${computer}`
   }
 }
 
@@ -218,7 +218,7 @@ if(ran === 0){
   choice = "scissor"
 }
 
-game('paper', choice)
+game("paper", choice)
 
 
 
